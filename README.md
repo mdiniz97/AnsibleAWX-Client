@@ -72,6 +72,13 @@ Examples
 #### Cancel Job by id
 	response = client.cancel_job(1)
 
+#### Creating/editing objects
+
+    # to create new host
+    response = client.create_host(name="127.0.0.1", inventory=123, description="created by via API",variables=json.dumps({"ansible_connection":"network_cli", "ansible_network_os":"ios"}))
+    # to modify existing host
+    response = client.update_host(id=5923, name="127.0.0.1", inventory=123, description="created by via API",variables=json.dumps({"ansible_connection":"network_cli", "ansible_network_os":"ios"}))
+
 Function Reference
 ------------------
 
